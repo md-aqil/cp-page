@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700,800,900&display=swap');
-
-
 @font-face {
   font-family: 'Aileron';
-
   src: url('../fonts/Aileron-Light.otf'); /* IE9 Compat Modes */
   src: url('../fonts/Aileron-Heavy.otf') format('otf'), /* IE6-IE8 */
        url('../fonts/Aileron-Bold.otf') format('otf'), /* Super Modern Browsers */
@@ -15,16 +12,37 @@
 
 body {
  font-family: 'Aileron', sans-serif;
-
 }
 
-:root {
-  --bg-color: #f2f2f2;
-  --theme-color: #203143;
+/*:root {
+  --theme-color: #322831;
   --text-color: #475159;
   --heading-color: #3b464e;
   --border-color: #ddd;
 }
+*/
+
+/*bluegray themes*/
+:root {
+  --theme-color: #006064;
+  --border-color: #e0f7fa;
+  --heading-color: #000;
+  --text-color: #333;
+}
+.theme-text {
+  color: var(--theme-color);
+}
+h2,h2,h3,h4 {
+  color: var(--heading-color);
+}
+p {
+  color: var(--text-color);
+}
+.form-control {
+  border-color: var(--border-color);
+}
+
+
 .heading-color {
   color: var(--heading-color);
 }
@@ -39,9 +57,12 @@ body {
 .nav-search-form input.form-control{
   width: 510px;
     height: 55px;
-    border-color: #184d73;
+    border-color: var(--theme-color);
     font-size: 18px;
     font-weight: 300;
+}
+.nav-search-form input.form-control:focus {
+  outline: none !important;
 }
 .navbar.bg-light {
     border-bottom: 1px solid #b8d3e6;
@@ -65,9 +86,8 @@ border-color: #184d73 !important;
     position: absolute;
     right: 12px;
     top: 16px;
-    z-index: 1;
+    z-index: 10;
     font-size: 27px;
-    color: #00000080;
     width: 26px;
 }
 .secondry-nav {
@@ -77,7 +97,7 @@ border-color: #184d73 !important;
     display: block;
     padding: 30px 30px;
     font-size: 20px;
-    color: #3b464e;
+    color: var(--theme-color);
     font-weight: 700;
 }
 
@@ -95,18 +115,6 @@ border-color: #184d73 !important;
 
 }
 
-.container-fluid {
-  padding-left: 40px;
-  padding-right: 40px;
-}
-.aside-form-box {
-  box-shadow: 0 0 7px #0000001f;
-    padding: 25px;
-    background: #fff;
-    transform: translateY(-180px);
-    border-radius: 4px;
-    width: 95%;
-}
 .aside-form-box .form-control {
   height: 60px;
   font-weight: 300;
@@ -238,7 +246,7 @@ width: 100%;
   padding: 0;
 }
 .connect-list li {
-  color: #3b464e;
+  color: var(--text-color);
     list-style: none;
     font-size: 21px;
     font-weight: 300;
@@ -324,12 +332,14 @@ font-size: 18px;
 .footer-links li a {
 font-weight: 300;
     font-size: 16px;
-    color: #788794;
+    color: var(--text-color);
     display: block;
     padding: 4px 0;
+    text-decoration: none;
 }
-.footer-social-media img {
+.footer-social-media img ,.footer-social-media svg{
   width: 35px;
+  height: 35px;
 }
 .footer-social-media {
   padding: 0;
@@ -350,7 +360,7 @@ font-weight: 300;
  padding: 12px;
     display: block;
     cursor: pointer;
-    border: 1px solid #184d73;
+    border: 1px solid var(--theme-color);
     height: 55px;
     font-size: 19px;
     border-radius: 4px 0px 0px 4px;
@@ -372,7 +382,7 @@ font-weight: 300;
     overflow-y: auto;
     position: relative;
       z-index: 10000;
-      border:1px solid #3c8dbc;
+      border:1px solid var(--theme-color);
       margin-top: -1px;
       border-top:none;
 
@@ -386,8 +396,7 @@ font-weight: 300;
   background: #f1f1f1;
 }
 .ui-select.open>span {
-   border: 1px solid #3c8dbc;
-  
+   border-bottom-left-radius:0;
 }
 .ui-select.open ul {
   -webkit-transform: scale(1); 
@@ -396,7 +405,8 @@ font-weight: 300;
 }
 
 .ui-select.open li.selected {
-  background: #BBB;
+  background: var(--theme-color);
+  color: #fff;
 }
 .ui-select ul li {
   transform: translate(0px, -20px);
@@ -576,4 +586,60 @@ to { transform: scale(1) }
 .previousImage, .nextImage { line-height: 300px; }
 }
 
+.aside-form-box {
+  box-shadow: 0 0 7px #0000001f;
+    padding: 25px;
+    background: #fff;
+    border-radius: 4px;
+    width: 95%;
+    height: 730px;
+    margin-top: -180px;
+}
+
+/*csrd flip*/
+
+.card-flip {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card-flip.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+ width: 90%;
+}
+
+.card__face--back {
+ background: white;
+    transform: rotateY(180deg);
+    top: 0;
+    right: 0;
+    padding: 30px;
+}
+.secondry-nav .nav-link {
+  transition: all .2s;
+}
+.secondry-nav .nav-link:hover {
+  transform: translateY(-3px);
+}
+.swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-container.card-slide {
+      padding-bottom: 40px;
+    }
+.swiper-pagination-bullet-active {
+  background: var(--theme-color);
+}
 

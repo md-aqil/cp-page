@@ -1,3 +1,23 @@
+ var swiper = new Swiper('.swiper-container.card-slide', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+ var swiper = new Swiper('.swiper-container.testimonial', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+
 (function() {
   $('select').each(function() {
     $(this).hide();
@@ -44,8 +64,6 @@
 $('.team-size-buttons li').click(function() {
   $(this).addClass('active').siblings().removeClass('active');
 });
-
-
 
 // gallery 
 
@@ -112,3 +130,9 @@ $(document).ready(function(){
     }
   });
 }); 
+
+$('.is-flip').click(function(e) {
+  e.preventDefault();
+  $('.card-flip').addClass('is-flipped');
+});
+
