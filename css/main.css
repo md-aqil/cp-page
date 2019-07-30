@@ -47,8 +47,8 @@ p {
   color: var(--heading-color);
 }
 .spacethis {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 .nav-search-form{
   padding: 15px 0;
@@ -634,7 +634,6 @@ to { transform: scale(1) }
 }
 .swiper-container {
       width: 100%;
-      height: 100%;
     }
     .swiper-container.card-slide {
       padding-bottom: 40px;

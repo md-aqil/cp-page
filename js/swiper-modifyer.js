@@ -6,10 +6,14 @@
         el: '.swiper-pagination',
         clickable: true,
       },
+
     });
+
+ 
  var swiper = new Swiper('.swiper-container.testimonial', {
-      slidesPerView: 3,
+      slidesPerView: 1,
       spaceBetween: 30,
+      autoPlay:true,
       
       pagination: {
         el: '.swiper-pagination',
